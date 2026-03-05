@@ -76,6 +76,12 @@ function Navigation() {
                     aria-label="Toggle navigation menu"
                     aria-expanded={menuOpen}
                     onClick={toggleMenu}
+                    onKeyDown={(e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            toggleMenu();
+                        }
+                    }}
                 >
                     <div className="line1"></div>
                     <div className="line2"></div>
